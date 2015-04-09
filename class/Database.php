@@ -50,14 +50,13 @@ class Database{
     public function connect(){
         // @TODO connect to mysql database and  return the connection object instance
         // should throw the exception if mysql connection cannnot be established
-        $conn = new mysqli($this->_host, $this->_user, $this->_pass, $this->_db);
-        if($conn->connect_error){
-            echo "Connection error: " . $conn->connect_errno;
+        try{
+            $conn = new mysqli($this->_host, $this->_user, $this->_pass, $this->_db);
+            return $conn;
         }
-        else{
-            echo "Connected to database";
+        catch(Exception $e){
+            return $e->getMessage();
         }
-        return ;
     }
     
     /*
@@ -66,6 +65,5 @@ class Database{
     public function disconnect(){
         // @TODO destroy connection
         $conn->close();
-        echo "Disconnected";
     }
 }

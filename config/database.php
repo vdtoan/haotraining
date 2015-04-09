@@ -1,9 +1,8 @@
 <?php
 
-$db_conn = array(
+return array(
         "host" => "localhost",
         "username" => "root",
         "password" => "",
         "database" => "training",
 );
-return $db_conn;
