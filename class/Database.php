@@ -35,10 +35,10 @@ class Database{
      */
     function __construct($config){
         // @TODO: assign propery to the config
-        $_user = $config["username"];
-        $_pass = $config["password"];
-        $_db = $config["database"];
-        $_host = $config["host"];
+        $this->_user = $config["username"];
+        $this->_pass = $config["password"];
+        $this->_db = $config["database"];
+        $this->_host = $config["host"];
         
     }
     
